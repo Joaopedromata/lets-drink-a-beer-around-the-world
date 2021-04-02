@@ -3,22 +3,21 @@ import styled from 'styled-components'
 
 interface Props {
     className?: string
-    height: string
+    width: string
     children: ReactNode
 }
 
 
-const FlexGroupVertical = ({ className, children }: Props) => {
+const FlexGroupHorizontal = ({ className, children }: Props) => {
     return (
         <div className={className}>{children}</div>
     )
 }
 
-export default styled(FlexGroupVertical)`
-    height: ${(props) => props.height};
-    width: 100%;
+export default styled(FlexGroupHorizontal)`
+    width: ${(props) => props.width};
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
 `

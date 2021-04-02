@@ -3,22 +3,23 @@ import styled from 'styled-components'
 
 interface Props {
     className?: string
-    height: string
     children: ReactNode
 }
 
-
-const FlexGroupVertical = ({ className, children }: Props) => {
+const Cell = ({ className, children }: Props) => {
     return (
         <div className={className}>{children}</div>
     )
 }
 
-export default styled(FlexGroupVertical)`
-    height: ${(props) => props.height};
-    width: 100%;
+export default styled(Cell)`
+    min-height: 70px;
+    border-bottom: 1px solid ${(props) => props.theme.gray};
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-`
+    justify-content: center;
+
+    &:last-child {
+        border-bottom: none;
+    }
+`    

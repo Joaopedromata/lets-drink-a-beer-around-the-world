@@ -1,19 +1,14 @@
 import { ReactNode } from 'react'
 import { ThemeProvider } from 'styled-components'
-
-interface ITheme {
-    primaryColor: string
-    secondaryColor: string
-    white: string
-    fontColor: string
-}
-
+import { ITheme } from '../types'
 
 const theme: ITheme = {
     primaryColor: '#F7CE5B',
     secondaryColor: '#755706',
     white: '#fff',
-    fontColor: '#4D4D4D'
+    fontColor: '#4D4D4D',
+    gray: '#C4C4C4',
+    lightGray: '#F6F6F6'
 }
 
 interface Props {

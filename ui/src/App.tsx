@@ -1,5 +1,6 @@
 import Page from './components/Page';
 import Routes from './routes';
+import BeerState from './states/BeerState';
 import GlobalStyles from './styles/GlobalStyles'
 import Theme from './styles/Theme'
 
@@ -8,9 +9,13 @@ function App() {
     <>
       <GlobalStyles />
       <Theme>
-        <Page>
-          <Routes />
-        </Page>
+        <BeerState>
+          {() => (
+            <Page>
+              <Routes />
+            </Page>
+          )}  
+        </BeerState>
       </Theme>
     </>
   );

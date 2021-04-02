@@ -5,7 +5,8 @@ import FlexGroupVertical from '../components/FlexGroupVertical'
 import Grid from '../components/Grid'
 import LandingImage from '../components/LandingImage'
 import Title from '../components/Title'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import Wrapper from '../components/Wrapper'
 
 interface Props {
     className?: string
@@ -13,36 +14,30 @@ interface Props {
 
 
 const Landing = ({ className }: Props) => {
+    
+    const history = useHistory()
+
     return (
         <Container>
             <Grid className={className}>
-                <div className="wrapper">
-                    <Title text="Let's travel to drink beer?" />
-                    <FlexGroupVertical height={150}>
-                        <Button style="SECONDARY" text="Let's go!!" />
+                <Wrapper width="600px">
+                    <Title fontSize="70px" text="Let's travel to drink a beer?" />
+                    <FlexGroupVertical height="150px">
+                        <Button styles="SECONDARY" text="Let's go!!" onClick={() => history.push('/shuffle')}/>
                         <Link className="a" to="/filter">or search by filters</Link> 
                     </FlexGroupVertical>
-                </div>
-                <div className="wrapper">
+                </Wrapper>
+                <Wrapper width='600px'>
                     <LandingImage size={{height: 650, width: 740}}/>
-                </div>
+                </Wrapper>
             </Grid>
         </Container>
     )
 }
 
 export default styled(Landing)`
-    .wrapper {
-        height: 100%;
-        width: 600px;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-
-        .a {
-            color: ${(props) => props.theme.secondaryColor}
-        }
+    .a {
+        color: ${(props) => props.theme.secondaryColor}
     }
 `
