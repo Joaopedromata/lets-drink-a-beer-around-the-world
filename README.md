@@ -47,6 +47,6 @@
 
     $ npm install
 
-#### Para iniciar o serviço digite:
+#### after:
 
     $ npm start
